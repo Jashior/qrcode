@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { toCanvas } from "qrcode";
   import jsQR, { type QRCode } from "jsqr";
+  import ColorPicker from "svelte-awesome-color-picker";
 
   let canvas: HTMLCanvasElement;
   let ctx: CanvasRenderingContext2D;
@@ -49,7 +50,10 @@
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate processing time
 
     const imageData = ctx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    const code = jsQR(imageData.data, CANVAS_SIZE, CANVAS_SIZE);
+    console.log(imageData);
+    const code = jsQR(imageData.data, CANVAS_SIZE, CANVAS_SIZE, {
+      inversionAttempts: "attemptBoth",
+    });
 
     if (code) {
       decodedData = code.data;
@@ -126,13 +130,14 @@
       on:mouseup={stopPainting}
       on:mouseleave={stopPainting}
     ></canvas>
-    <div class="flex items-center space-x-2">
-      <input type="color" bind:value={paintColor} class="h-8 w-8" />
-      <span class="text-sm text-gray-600">Selected Color: {paintColor}</span>
+    <div class="flex items-center space-x-2 flex-col">
+      <span class="text-xs" style="color: {paintColor}"> {paintColor}</span>
+      <ColorPicker bind:hex={paintColor} position="responsive" />
     </div>
+
     <hr class="w-full border-t border-gray-300" />
     <div class="h-64">
-      <p class="max-w-96 text-lg text-center font-medium {decodedDataColor}">
+      <p class="max-w-96 text-center font-medium {decodedDataColor}">
         {#if isReading}
           ...
         {:else}
@@ -142,3 +147,9 @@
     </div>
   </div>
 </main>
+
+<style>
+  .color-span {
+    color: var(--paintColor);
+  }
+</style>
