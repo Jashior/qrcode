@@ -1,3 +1,5 @@
+![ya](https://github.com/user-attachments/assets/baed720e-4752-459a-b442-0e9277474041)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
