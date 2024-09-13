@@ -3,7 +3,7 @@ name: Deploy qrcode to domain qrcode.zanaris.dev
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:

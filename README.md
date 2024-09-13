@@ -1,3 +1,5 @@
+https://qrcode.zanaris.dev/
+
 ![ya](https://github.com/user-attachments/assets/baed720e-4752-459a-b442-0e9277474041)
 
 # create-svelte
