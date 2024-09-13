@@ -7,6 +7,3 @@
 ![ya](https://github.com/user-attachments/assets/baed720e-4752-459a-b442-0e9277474041)
 
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
