@@ -131,7 +131,9 @@
       on:mouseleave={stopPainting}
     ></canvas>
     <div class="flex items-center space-x-2 flex-col">
-      <span class="text-xs" style="color: {paintColor}"> {paintColor}</span>
+      <span class="text-xs" style="color: {paintColor}"
+        >Color: {paintColor}</span
+      >
       <ColorPicker bind:hex={paintColor} position="responsive" />
     </div>
 
