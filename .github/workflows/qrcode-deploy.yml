@@ -39,18 +39,18 @@ jobs:
             echo "Connection successful"
             echo "Deploying commit: $GITHUB_SHA"
             echo "Repository: $GITHUB_REPOSITORY"
-            cd /home/dev/FPL-XY
+            cd /home/dev/qrcode
             git fetch
             git reset --hard origin/master
             npm i
-            npm run build-ssl
+            npm run build
 
-            # Check if FPL-XY is running in PM2
-            if pm2 list | grep -q "FPL-XY"; then
-              echo "FPL-XY is already running, restarting..."
-              pm2 restart FPL-XY
+            # Check if qrcode is running in PM2
+            if pm2 list | grep -q "qrcode"; then
+              echo "qrcode is already running, restarting..."
+              pm2 restart qrcode
             else
-              echo "FPL-XY is not running, starting..."
+              echo "qrcode is not running, starting..."
               pm2 start ecosystem.config.js  # Or the appropriate command to start your app
             fi
 
