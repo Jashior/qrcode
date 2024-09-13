@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { default as prettier } from 'prettier'; // Import prettier here
+import adapter from "@sveltejs/adapter-auto";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { default as prettier } from "prettier"; // Import prettier here
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +11,7 @@ const config = {
     (code, filename) => {
       // Format Svelte code with Prettier
       const formattedCode = prettier.format(code, {
-        parser: 'svelte',
+        parser: "svelte",
         printWidth: 100,
       });
       return formattedCode;

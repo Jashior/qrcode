@@ -7,7 +7,7 @@
   let canvas: HTMLCanvasElement;
   let ctx: CanvasRenderingContext2D;
   let decodedData: string | null = null;
-  let inputUrl: string = "https://www.example.com";
+  let inputUrl: string = "https://qrcode.zanaris.dev";
   let paintColor: string = "#000000";
   let isPainting: boolean = false;
   let isReading: boolean = false;
@@ -50,14 +50,14 @@
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate processing time
 
     const imageData = ctx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    console.log(imageData);
+    // console.log(imageData);
     const code = jsQR(imageData.data, CANVAS_SIZE, CANVAS_SIZE, {
       inversionAttempts: "attemptBoth",
     });
 
     if (code) {
       decodedData = code.data;
-      console.log("QR code decoded:", decodedData);
+      // console.log("QR code decoded:", decodedData);
     } else {
       console.log("No QR code found");
       decodedData = null;
