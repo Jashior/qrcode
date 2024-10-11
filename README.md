@@ -1,4 +1,6 @@
-# https://qrcode.zanaris.dev/
+# QR code
+
+https://qrcode.zanaris.dev/
 
 - Generate QR Codes: Easily create QR codes for any URL or text.
 - Deface the QR Code: Draw or scribble over the QR code and see how it affects its readability.
