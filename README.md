@@ -1,4 +1,4 @@
-# QR code
+# QR Code
 
 https://qrcode.zanaris.dev/
 
